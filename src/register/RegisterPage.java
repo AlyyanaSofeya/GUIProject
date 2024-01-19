@@ -10,9 +10,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
+
 public class RegisterPage extends javax.swing.JFrame {
 
     File f = new File("C:\\Users\\Alyana\\Documents\\NetBeansProjects\\register");
+    String name,email,username,password;
+    int ln;
+    
     
     public RegisterPage() {
         initComponents();
@@ -25,34 +29,53 @@ public class RegisterPage extends javax.swing.JFrame {
     
     void readFile(){
         try {
-            FileReader fr = new FileReader(f+"\\register.txt");
+            FileReader fr = new FileReader(f+"\\custInfo.txt");
             System.err.println("File exists!");
         } catch (FileNotFoundException ex) {
             try {
-                FileWriter fw = new FileWriter(f+"\\register.txt");
+                FileWriter fw = new FileWriter(f+"\\custInfo.txt");
                 System.out.println("File created!");
             } catch (IOException ex1) {
                 Logger.getLogger(RegisterPage.class.getName()).log(Level.SEVERE, null, ex1);
             }
-        }
-        
-        
-        
+        }  
     }
     
     void addData(String name, String email,String username, String password){
         try {
-            RandomAccessFile raf = new RandomAccessFile(f+"\\register.txt","rwd");
-            raf.writeBytes("Name:"+name);
-            raf.writeBytes("Email:"+email);
-            raf.writeBytes("Username:"+username);
+            RandomAccessFile raf = new RandomAccessFile(f+"\\custInfo.txt","rwd");
+            /*raf.writeBytes(name+";"+email+";"+username+";"+password+";");*/
+             for(int i=0;i<ln;i++){
+                raf.readLine();
+            }
+            raf.writeBytes("Name:"+name+"\r\n");
+            raf.writeBytes("Email:"+email+"\r\n");
+            raf.writeBytes("Username:"+username+"\r\n");
             raf.writeBytes("Password:"+password);
+            raf.writeBytes("\r\n");
+            raf.writeBytes("\r\n");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(RegisterPage.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(RegisterPage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
+    void countLines(){
+        try {
+            ln=1;
+            RandomAccessFile raf =new RandomAccessFile(f+"\\custInfo.txt","rw");
+            for(int i=0;raf.readLine()!=null;i++){
+                ln++;
+            }
+            System.out.println("Number of lines:"+ln);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -312,6 +335,12 @@ public class RegisterPage extends javax.swing.JFrame {
 
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
         // TODO add your handling code here:
+        createFolder();
+        readFile();
+        countLines();
+        addData(jTextFieldName.getText(),jTextFieldEmail.getText(),jTextFieldUsername.getText()
+                ,jPasswordFieldPassword.getText());
+        
        
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
@@ -319,7 +348,7 @@ public class RegisterPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         createFolder();
         readFile();
-        addData("alyyana","alyyana03","alyn","sofeya29");
+        
     }//GEN-LAST:event_jButtonTestActionPerformed
 
     /**
