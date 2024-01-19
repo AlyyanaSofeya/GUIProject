@@ -34,44 +34,6 @@ public class LoginPage extends javax.swing.JFrame {
         }  
     }
  
- void checkData(String user, String pass){
-        try {
-            FileReader reader = new FileReader("custInfo.txt");
-            Scanner fInput = new Scanner(reader);
-            while(fInput.hasNextLine()){
-                String line = fInput.nextLine();
-                StringTokenizer st = new StringTokenizer(line,":");
-                fInput.nextLine();
-                fInput.nextLine();
-                username=st.nextToken();
-                password=st.nextToken();
-            }
-            if(user.equals(username)& pass.equals(password)){
-                JOptionPane.showMessageDialog(null,"Password matched");
-            }else{
-                JOptionPane.showMessageDialog(null,"Wrong Username/Password");}
-        
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(RegisterPage.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-        
-    }
-  
-/* void countLines(){
-        try {
-            ln=1;
-            RandomAccessFile raf =new RandomAccessFile(f+"\\custInfo.txt","rw");
-            for(int i=0;raf.readLine()!=null;i++){
-                ln++;
-            }
-            System.out.println("Number of lines:"+ln);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
-        }
- }*/
- 
 
 void checkLogin(String username, String password) {
         try (BufferedReader reader = new BufferedReader(new FileReader("custInfo.txt"))) {
@@ -89,7 +51,13 @@ void checkLogin(String username, String password) {
                             field = parts[0].trim();
                             value = parts[1].trim();
                             if (field.equals("Password") && value.equals(password)) {
-                                JOptionPane.showMessageDialog(null,"Login successful"); // Login successful
+                                //JOptionPane.showMessageDialog(null,"Login successful"); // Login successful
+                                /*Homepage HomePageFrame = new Homepage();
+                                HomePageFrame.setVisible(true);
+                                HomePageFrame.pack();
+                                HomePageFrame.setLocationRelativeTo(null);
+                                this.dispose();*/
+                                
                             }
                             }
                         }
@@ -122,11 +90,7 @@ void checkLogin(String username, String password) {
         jButtonLogin = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButtonTest = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN");
@@ -207,16 +171,6 @@ void checkLogin(String username, String password) {
 
         jLabel7.setText("I don't have an account");
 
-        jButton4.setBackground(new java.awt.Color(255, 102, 102));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Forgot Password");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
         jButton5.setBackground(new java.awt.Color(255, 102, 102));
         jButton5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
@@ -224,21 +178,6 @@ void checkLogin(String username, String password) {
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel8.setText("Forgot Password");
-
-        jButton2.setBackground(new java.awt.Color(255, 102, 102));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Back");
-
-        jButtonTest.setText("test");
-        jButtonTest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonTestActionPerformed(evt);
             }
         });
 
@@ -250,28 +189,19 @@ void checkLogin(String username, String password) {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel6)
-                                .addComponent(jButtonLogin)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel8)
-                                    .addGap(27, 27, 27)
-                                    .addComponent(jButton4))
-                                .addComponent(jTextField1)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel7)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jButton5)))))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jButtonLogin)
+                            .addComponent(jTextField1)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton5))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(144, 144, 144)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(jButtonTest)))
+                        .addComponent(jLabel4)))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -293,15 +223,7 @@ void checkLogin(String username, String password) {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonTest)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3);
@@ -333,12 +255,8 @@ void checkLogin(String username, String password) {
 
         readFile();
         checkLogin(jTextField1.getText(),jPasswordField1.getText());
-        //checkData(jTextField1.getText(),jPasswordField1.getText());
+        
     }//GEN-LAST:event_jButtonLoginActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
@@ -349,25 +267,14 @@ void checkLogin(String username, String password) {
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButtonTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTestActionPerformed
-        // TODO add your handling code here:
-        
-        readFile();
-        
-        //checkData("alyn","sofeya29");
-    }//GEN-LAST:event_jButtonTestActionPerformed
-
     /**
      * @param args the command line arguments
      */
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButtonLogin;
-    private javax.swing.JButton jButtonTest;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -375,7 +282,6 @@ void checkLogin(String username, String password) {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

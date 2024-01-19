@@ -5,9 +5,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.RandomAccessFile;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 
@@ -54,11 +57,19 @@ public class RegisterPage extends javax.swing.JFrame {
             raf.writeBytes("Password:"+password);
             raf.writeBytes("\r\n");
             raf.writeBytes("\r\n");
-        } catch (FileNotFoundException ex) {
+        }
+        catch (FileNotFoundException ex) {
             Logger.getLogger(RegisterPage.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(RegisterPage.class.getName()).log(Level.SEVERE, null, ex);
         }
+        JOptionPane.showMessageDialog(null,"User have been registered");
+        LoginPage LoginFrame = new LoginPage();
+        LoginFrame.setVisible(true);
+        LoginFrame.pack();
+        LoginFrame.setLocationRelativeTo(null);
+        this.dispose();
+        
     }
     
     
@@ -97,9 +108,7 @@ public class RegisterPage extends javax.swing.JFrame {
         jButtonLogin = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jPasswordFieldPassword = new javax.swing.JPasswordField();
-        jButtonBack = new javax.swing.JButton();
         jTextFieldUsername = new javax.swing.JTextField();
-        jButtonTest = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("REGISTER");
@@ -213,18 +222,6 @@ public class RegisterPage extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setText("Password");
 
-        jButtonBack.setBackground(new java.awt.Color(255, 102, 102));
-        jButtonBack.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonBack.setText("Back");
-
-        jButtonTest.setText("test");
-        jButtonTest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonTestActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout LeftLayout = new javax.swing.GroupLayout(Left);
         Left.setLayout(LeftLayout);
         LeftLayout.setHorizontalGroup(
@@ -237,10 +234,6 @@ public class RegisterPage extends javax.swing.JFrame {
                     .addGroup(LeftLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(LeftLayout.createSequentialGroup()
-                                .addComponent(jButtonBack)
-                                .addGap(104, 104, 104)
-                                .addComponent(jButtonTest))
                             .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel9)
                                 .addComponent(jLabel2)
@@ -281,17 +274,10 @@ public class RegisterPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonRegister)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LeftLayout.createSequentialGroup()
-                        .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jButtonLogin))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonBack)
-                        .addGap(71, 71, 71))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeftLayout.createSequentialGroup()
-                        .addComponent(jButtonTest)
-                        .addGap(55, 55, 55))))
+                .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jButtonLogin))
+                .addGap(104, 104, 104))
         );
 
         jPanel1.add(Left);
@@ -344,13 +330,6 @@ public class RegisterPage extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
-    private void jButtonTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTestActionPerformed
-        // TODO add your handling code here:
-        createFolder();
-        readFile();
-        
-    }//GEN-LAST:event_jButtonTestActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -359,10 +338,8 @@ public class RegisterPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Left;
     private javax.swing.JPanel Right;
-    private javax.swing.JButton jButtonBack;
     private javax.swing.JButton jButtonLogin;
     private javax.swing.JButton jButtonRegister;
-    private javax.swing.JButton jButtonTest;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
