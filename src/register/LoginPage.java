@@ -36,6 +36,8 @@ public class LoginPage extends javax.swing.JFrame {
  
 
 void checkLogin(String username, String password) {
+        boolean loginSuccessful=false;//flag to check if login successful
+        
         try (BufferedReader reader = new BufferedReader(new FileReader("custInfo.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -51,18 +53,23 @@ void checkLogin(String username, String password) {
                             field = parts[0].trim();
                             value = parts[1].trim();
                             if (field.equals("Password") && value.equals(password)) {
+                                loginSuccessful=true;
                                 //JOptionPane.showMessageDialog(null,"Login successful"); // Login successful
                                 /*Homepage HomePageFrame = new Homepage();
                                 HomePageFrame.setVisible(true);
                                 HomePageFrame.pack();
                                 HomePageFrame.setLocationRelativeTo(null);
                                 this.dispose();*/
+                                break;
                                 
-                            }
+                            }   
                             }
                         }
                     }
                 }
+            if(!loginSuccessful)
+                JOptionPane.showMessageDialog(null,"Wrong username/password");
+                
             } catch (FileNotFoundException ex) {
             Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
