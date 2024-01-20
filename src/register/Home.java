@@ -80,9 +80,9 @@ public class Home extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
         jPanel1.setPreferredSize(new java.awt.Dimension(1490, 869));
 
-        jPanel2.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(255, 153, 153));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Gadugi", 3, 24)); // NOI18N
         jLabel1.setText("Lyssaa Liciousss");
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
@@ -109,7 +109,7 @@ public class Home extends javax.swing.JFrame {
 
         jButton6.setText("jButton5");
 
-        jButton9.setBackground(new java.awt.Color(204, 204, 204));
+        jButton9.setBackground(new java.awt.Color(255, 0, 102));
         jButton9.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         jButton9.setText("Exit");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -118,11 +118,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setBackground(new java.awt.Color(204, 204, 204));
+        jButton10.setBackground(new java.awt.Color(255, 0, 102));
         jButton10.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         jButton10.setText("Contact Us");
 
-        jButton11.setBackground(new java.awt.Color(204, 204, 204));
+        jButton11.setBackground(new java.awt.Color(255, 0, 102));
         jButton11.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         jButton11.setText("Cart");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -137,8 +137,8 @@ public class Home extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(919, 919, 919)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(929, 929, 929)
                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,7 +291,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
