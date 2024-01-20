@@ -2,11 +2,6 @@
 package register;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-
-import java.io.IOException;
-import java.util.Scanner;
-import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -15,6 +10,14 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class LoginPage extends javax.swing.JFrame {
+    
+    public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new LoginPage().setVisible(true);
+            }
+        });
+    }
 
     File f = new File("C:\\Users\\Alyana\\Documents\\NetBeansProjects\\register");
     String username,password;

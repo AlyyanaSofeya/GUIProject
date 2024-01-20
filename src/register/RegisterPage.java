@@ -5,16 +5,21 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.RandomAccessFile;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
-
 public class RegisterPage extends javax.swing.JFrame {
+    
+    public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new RegisterPage().setVisible(true);
+            }
+        });
+    }
 
     File f = new File("C:\\Users\\Alyana\\Documents\\NetBeansProjects\\register");
     String name,email,username,password;
@@ -330,9 +335,7 @@ public class RegisterPage extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
