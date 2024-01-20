@@ -58,11 +58,11 @@ void checkLogin(String username, String password) {
                             if (field.equals("Password") && value.equals(password)) {
                                 loginSuccessful=true;
                                 //JOptionPane.showMessageDialog(null,"Login successful"); // Login successful
-                                /*Homepage HomePageFrame = new Homepage();
+                                Home HomePageFrame = new Home();
                                 HomePageFrame.setVisible(true);
                                 HomePageFrame.pack();
                                 HomePageFrame.setLocationRelativeTo(null);
-                                this.dispose();*/
+                                this.dispose();
                                 break;
                                 
                             }   

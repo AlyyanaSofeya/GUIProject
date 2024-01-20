@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package register;
 
 import java.awt.Image;
@@ -12,16 +9,29 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import java.io.PrintWriter;
+import java.io.FileWriter;
+import register.Home;
 
-/**
- *
- * @author Honor
- */
 public class Dashboard extends javax.swing.JFrame {
 
     private double total = 0.00;
     private int x = 0;
+    private int qty1 = 0;
+    private int qty2 = 0;
+    private int qty3 = 0;
+    private int qty4 = 0;
+    private int qty5 = 0;
+    private int qty6 = 0;
+    private int qty7 = 0;
+    private int qty8 = 0;
+    private int qty9 = 0;
     
+    Date date = new Date();
+    SimpleDateFormat tf = new SimpleDateFormat("h:mm:ss aa");
+    SimpleDateFormat df = new SimpleDateFormat("EEEE, dd-MM-yyyy");
+    String time = tf.format(date);
+     
     public Dashboard() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -100,6 +110,7 @@ public class Dashboard extends javax.swing.JFrame {
         jButton19.setSelected(false);
         jButton20.setSelected(false);
         jButton24.setSelected(false);
+        x=0;
     }
     
     public void dudate(){
@@ -196,9 +207,10 @@ public class Dashboard extends javax.swing.JFrame {
         jSpinner9 = new javax.swing.JSpinner();
         jButton24 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         BtnReset = new javax.swing.JButton();
         BtnExit = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldTotal = new javax.swing.JTextField();
@@ -336,7 +348,6 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -392,9 +403,9 @@ public class Dashboard extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTxtDate)
                         .addComponent(jTextDate)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -1017,16 +1028,6 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(230, 230, 230), 2));
 
-        jButton1.setBackground(new java.awt.Color(51, 204, 0));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Choose Your Delivery ->");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         BtnReset.setBackground(new java.awt.Color(51, 51, 255));
         BtnReset.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BtnReset.setForeground(new java.awt.Color(255, 255, 255));
@@ -1047,28 +1048,55 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(102, 0, 204));
+        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Confirm Order");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setBackground(new java.awt.Color(0, 153, 0));
+        jButton4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Please Chose Your Delivery");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(47, 47, 47)
-                .addComponent(BtnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addContainerGap(83, Short.MAX_VALUE)
                 .addComponent(BtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(269, 269, 269))
+                .addGap(32, 32, 32)
+                .addComponent(BtnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(211, 211, 211))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(2, 2, 2))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BtnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
@@ -1135,10 +1163,10 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1150,24 +1178,23 @@ public class Dashboard extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    
     private void BtnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnResetActionPerformed
         reset();
     }//GEN-LAST:event_BtnResetActionPerformed
 
     private void BtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnExitActionPerformed
-        System.exit(0);
+
+        Home hm = new Home();
+        hm.setVisible(true);
     }//GEN-LAST:event_BtnExitActionPerformed
 
     public void lyssaaLiciousss(){
@@ -1177,7 +1204,10 @@ public class Dashboard extends javax.swing.JFrame {
                 + "\n    Item     Name\t\t        Qty\t        Price (RM)\n");
         
     }
-            
+   
+    
+    private boolean jButton3Clicked = false;
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         int qty = Integer.parseInt(jSpinner1.getValue().toString());
         if(qtyIsZero(qty)){
@@ -1185,16 +1215,23 @@ public class Dashboard extends javax.swing.JFrame {
             if(x==1){
                 lyssaaLiciousss();
             }
+            
+            qty1 += qty; 
+     
             double price = qty*32.0;
             total += price;
             jTextArea.setText (jTextArea.getText() + "    " + x + ". " + jLabel9.getText() + "      "+ qty + "\t         " + price + "\n");
             dudate();
-
+            
+            jButton3Clicked = true;
+            
         }else {
             jButton3.setSelected(false);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private boolean jButton12Clicked;
+    
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         int qty = Integer.parseInt(jSpinner2.getValue().toString());
         if(qtyIsZero(qty)){
@@ -1202,16 +1239,23 @@ public class Dashboard extends javax.swing.JFrame {
             if(x==1){
                 lyssaaLiciousss();
             }
+            
+            qty2 += qty;
+            
             double price = qty*32.0;
             total += price;
             jTextArea.setText (jTextArea.getText() + "    " + x + ". " + jLabel36.getText() + "       "+ qty + "\t         " + price + "\n");
             dudate();
+            
+            jButton12Clicked = true;
 
         }else {
             jButton12.setSelected(false);
         }
     }//GEN-LAST:event_jButton12ActionPerformed
 
+    private boolean jButton13Clicked = false;
+    
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         int qty = Integer.parseInt(jSpinner3.getValue().toString());
         if(qtyIsZero(qty)){
@@ -1219,16 +1263,23 @@ public class Dashboard extends javax.swing.JFrame {
             if(x==1){
                 lyssaaLiciousss();
             }
+            
+            qty3 += qty;
+            
             double price = qty*18.0;
             total += price;
             jTextArea.setText (jTextArea.getText() + "    " + x + ". " + jLabel42.getText() + "      \t           "+ qty + "\t         " + price + "\n");
             dudate();
+            
+            jButton13Clicked = true;
 
         }else {
             jButton13.setSelected(false);
         }
     }//GEN-LAST:event_jButton13ActionPerformed
 
+    private boolean jButton15Clicked = false;
+    
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         int qty = Integer.parseInt(jSpinner4.getValue().toString());
         if(qtyIsZero(qty)){
@@ -1236,16 +1287,23 @@ public class Dashboard extends javax.swing.JFrame {
             if(x==1){
                 lyssaaLiciousss();
             }
+            
+            qty4 += qty;
+            
             double price = qty*20.0;
             total += price;
             jTextArea.setText (jTextArea.getText() + "    " + x + ". " + jLabel45.getText() + "      \t           "+ qty + "\t         " + price + "\n");
             dudate();
+            
+            jButton15Clicked = true;
 
         }else {
             jButton15.setSelected(false);
         }
     }//GEN-LAST:event_jButton15ActionPerformed
 
+    private boolean jButton16Clicked = false;
+    
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         int qty = Integer.parseInt(jSpinner16.getValue().toString());
         if(qtyIsZero(qty)){
@@ -1253,16 +1311,23 @@ public class Dashboard extends javax.swing.JFrame {
             if(x==1){
                 lyssaaLiciousss();
             }
+            
+            qty5 += qty;
+            
             double price = qty*32.0;
             total += price;
             jTextArea.setText (jTextArea.getText() + "    " + x + ". " + jLabel48.getText() + "      \t           "+ qty + "\t         " + price + "\n");
             dudate();
+            
+            jButton16Clicked = true;
 
         }else {
             jButton16.setSelected(false);
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
+    private boolean jButton17Clicked = false;
+    
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         int qty = Integer.parseInt(jSpinner6.getValue().toString());
         if(qtyIsZero(qty)){
@@ -1270,16 +1335,23 @@ public class Dashboard extends javax.swing.JFrame {
             if(x==1){
                 lyssaaLiciousss();
             }
+            
+            qty6 += qty;
+            
             double price = qty*20.0;
             total += price;
             jTextArea.setText (jTextArea.getText() + "    " + x + ". " + jLabel51.getText() + "      \t           "+ qty + "\t         " + price + "\n");
             dudate();
+            
+            jButton17Clicked = true;
 
         }else {
             jButton17.setSelected(false);
         }
     }//GEN-LAST:event_jButton17ActionPerformed
 
+    private boolean jButton19Clicked = false;
+    
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         int qty = Integer.parseInt(jSpinner19.getValue().toString());
         if(qtyIsZero(qty)){
@@ -1287,16 +1359,23 @@ public class Dashboard extends javax.swing.JFrame {
             if(x==1){
                 lyssaaLiciousss();
             }
+            
+            qty7 += qty;
+            
             double price = qty*30.0;
             total += price;
             jTextArea.setText (jTextArea.getText() + "    " + x + ". " + jLabel57.getText() + "      \t           "+ qty + "\t         " + price + "\n");
             dudate();
+            
+            jButton19Clicked = true;
 
         }else {
             jButton19.setSelected(false);
         }
     }//GEN-LAST:event_jButton19ActionPerformed
 
+    private boolean jButton20Clicked = false;
+    
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         int qty = Integer.parseInt(jSpinner20.getValue().toString());
         if(qtyIsZero(qty)){
@@ -1304,16 +1383,23 @@ public class Dashboard extends javax.swing.JFrame {
             if(x==1){
                 lyssaaLiciousss();
             }
-            double price = qty*28.0;
+            
+            qty8 += qty;
+            
+            double price = qty8*28.0;
             total += price;
             jTextArea.setText (jTextArea.getText() + "    " + x + ". " + jLabel60.getText() + "                "+ qty + "\t         " + price + "\n");
             dudate();
+            
+            jButton20Clicked = true;
 
         }else {
             jButton20.setSelected(false);
         }
     }//GEN-LAST:event_jButton20ActionPerformed
 
+    private boolean jButton24Clicked = false;
+    
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
        int qty = Integer.parseInt(jSpinner9.getValue().toString());
         if(qtyIsZero(qty)){
@@ -1321,11 +1407,14 @@ public class Dashboard extends javax.swing.JFrame {
             if(x==1){
                 lyssaaLiciousss();
             }
+            
+            qty9 += qty;
+            
             double price = qty*28.0;
             total += price;
             jTextArea.setText (jTextArea.getText() + "    " + x + ". " + jLabel72.getText() + "      \t           "+ qty + "\t         " + price + "\n");
             dudate();
-
+            jButton24Clicked = true;
         }else {
             jButton24.setSelected(false);
         }
@@ -1343,6 +1432,105 @@ public class Dashboard extends javax.swing.JFrame {
         xy = evt.getY();
     }//GEN-LAST:event_jPanel2MousePressed
     
+    private boolean jButton2Clicked = false;
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       
+        int response = JOptionPane.showConfirmDialog(this,"Are you confirm your order?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+       if(response == JOptionPane.YES_OPTION){
+           
+           jButton2Clicked = true;
+        
+        JOptionPane.showMessageDialog(null, "Your order have been saved.\nPlease chose your delivery type.");
+       try{
+            
+              FileWriter q = new FileWriter("CustPurchase.txt");
+              FileWriter r = new FileWriter("ListCookiesPurchase.txt",true);
+              PrintWriter w = new PrintWriter(q);
+              PrintWriter s = new PrintWriter(r);
+              
+              s.write(time.split(" ")[0] + " " + time.split(" ")[1] + "\t");
+              s.write(df.format(date) + "\n");
+              
+              if (jButton3Clicked){
+                 w.write(jLabel9.getText() + ";" + qty1 + ";" + qty1 * 32 + "\n");
+                 s.write(jLabel9.getText() + ";" + qty1 + ";" + qty1 * 32 + "\n");
+                 
+              }
+              
+              if (jButton12Clicked){
+                 w.write(jLabel36.getText() + ";"+ qty2 + ";" + qty2 * 32 + "\n");
+                 s.write(jLabel36.getText() + ";"+ qty2 + ";" + qty2 * 32 + "\n");
+                 
+              }
+              
+              if (jButton13Clicked){
+                 w.write(jLabel42.getText() + ";"+ qty3 + ";" + qty3 * 18 + "\n");
+                 s.write(jLabel42.getText() + ";"+ qty3 + ";" + qty3 * 18 + "\n");
+                 
+              }
+             
+              if (jButton15Clicked){
+                 w.write(jLabel45.getText() + ";"+ qty4 + ";" + qty4 * 20 + "\n");
+                 s.write(jLabel45.getText() + ";"+ qty4 + ";" + qty4 * 20 + "\n");
+                 
+              }
+              
+              if (jButton16Clicked){
+                 w.write(jLabel48.getText() + ";"+ qty5 + ";" + qty5 * 32 + "\n");
+                 s.write(jLabel48.getText() + ";"+ qty5 + ";" + qty5 * 32 + "\n");
+                
+              }
+              
+              if (jButton17Clicked){
+                 w.write(jLabel51.getText() + ";"+ qty6 + ";" + qty6 * 20 + "\n");
+                 s.write(jLabel51.getText() + ";"+ qty6 + ";" + qty6 * 20 + "\n");
+                 
+              }
+              
+              if (jButton19Clicked){
+                 w.write(jLabel57.getText() + ";"+ qty7 + ";" + qty7 * 30 + "\n");
+                 s.write(jLabel57.getText() + ";"+ qty7 + ";" + qty7 * 30 + "\n");
+                 
+              }
+              
+              if (jButton20Clicked){
+                 w.write(jLabel60.getText() + ";"+ qty8 + ";" + qty8 * 28 + "\n");
+                 s.write(jLabel60.getText() + ";"+ qty8 + ";" + qty8 * 28 + "\n");
+                 
+              }
+              
+              if (jButton24Clicked){
+                 w.write(jLabel72.getText() + ";"+ qty9 + ";" + qty9 * 28 + "\n");
+                 s.write(jLabel72.getText() + ";"+ qty9 + ";" + qty9 * 28 + "\n");
+                 
+              }
+              
+              s.write("\n\n");
+              
+              
+              w.close();
+              s.close();
+              
+             
+          }
+          catch(Exception e){
+            
+          }
+       }
+       else{
+       jButton2Clicked = false;
+       }
+       
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        if(jButton2Clicked == false){
+            JOptionPane.showMessageDialog(null, "Please confirm your order first.");
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+    
     
 //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     
@@ -1356,12 +1544,15 @@ public class Dashboard extends javax.swing.JFrame {
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    Date date = new Date();
+                    /*Date date = new Date();
                     SimpleDateFormat tf = new SimpleDateFormat("h:mm:ss aa");
                     SimpleDateFormat df = new SimpleDateFormat("EEEE, dd-MM-yyyy");
-                    String time = tf.format(date);
+                    String time = tf.format(date);*/
                     jTextTime.setText(time.split(" ")[0] + " " + time.split(" ")[1]);
                     jTextDate.setText(df.format(date));
+                    
+                    
+                    
                     
                 }
             }
@@ -1407,16 +1598,17 @@ public class Dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnExit;
     private javax.swing.JButton BtnReset;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton19;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
