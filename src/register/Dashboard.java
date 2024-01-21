@@ -1108,6 +1108,11 @@ public class Dashboard extends javax.swing.JFrame {
         jTextFieldTotal.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         jTextFieldTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldTotal.setText("0.00");
+        jTextFieldTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTotalActionPerformed(evt);
+            }
+        });
 
         jTextArea.setBackground(new java.awt.Color(204, 204, 204));
         jTextArea.setColumns(20);
@@ -1533,6 +1538,10 @@ public class Dashboard extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please confirm your order first.");
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTextFieldTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldTotalActionPerformed
     
     
 //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
