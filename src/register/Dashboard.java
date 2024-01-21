@@ -1537,6 +1537,16 @@ public class Dashboard extends javax.swing.JFrame {
         if(jButton2Clicked == false){
             JOptionPane.showMessageDialog(null, "Please confirm your order first.");
         }
+        else {
+            //go to DeliveryPage
+            double tot;
+            
+            tot = Double.parseDouble(jTextFieldTotal.getText());
+            
+            new DeliveryPage(tot).setVisible(true);
+            
+            dispose();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jTextFieldTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTotalActionPerformed
