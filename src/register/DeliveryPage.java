@@ -437,18 +437,20 @@ public class DeliveryPage extends javax.swing.JFrame {
         String name = jTextField1.getText();
         String phoneNumber = jTextField2.getText();
         String address = jTextArea1.getText();
+        String pickUpPrice = jLabel8.getText();
+        String deliveryPrice = jLabel11.getText();
         
         try {
             FileWriter Writer = new FileWriter("pick_up.txt", true);
             FileWriter Writer2 = new FileWriter("delivery.txt", true);
             
             if (jRadioButton1.isSelected()){
-                Writer.write("Name : "+name+"\nPhone number : "+phoneNumber+"\n");
+                Writer.write("Name : "+name+"\nPhone number : "+phoneNumber+"\nPrice : "+pickUpPrice+"\n");
                 Writer.write(System.getProperty("line.separator"));
                 Writer.close();
             }
             else if (jRadioButton2.isSelected()){
-                Writer2.write("Name : "+name+"\nPhone number : "+phoneNumber+"\nAddress : "+address+"\n");
+                Writer2.write("Name : "+name+"\nPhone number : "+phoneNumber+"\nAddress : "+address+"\nPrice : "+deliveryPrice+"\n");
                 Writer2.write(System.getProperty("line.separator"));
                 Writer2.close();
             }
