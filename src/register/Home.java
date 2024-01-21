@@ -193,7 +193,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("STXingkai", 0, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("you one stop centre for cookies <3 ");
+        jLabel5.setText("Your one stop centre for cookies <3 ");
 
         jButton4.setBackground(new java.awt.Color(255, 255, 51));
         jButton4.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N

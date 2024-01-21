@@ -28,3 +28,8 @@ Email:sofeya77@gmail.com
 Username:SofeyaJefryy
 Password:sofeya1234
 
+Name:Abdul Wakeel
+Email:Wakeel03@gmail.com
+Username:AbdWakeel
+Password:wakeel1234
+
