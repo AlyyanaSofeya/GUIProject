@@ -4,6 +4,7 @@
  */
 package register;
 
+import java.io.FileWriter;
 import register.paymentform;
 import javax.swing.JOptionPane;
 
@@ -138,6 +139,25 @@ public class COD extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
+        String billingAddress = jTextField1.getText();
+        String billingAdress = jTextField2.getText();
+        String state = jTextField4.getText();
+        String poscod = jTextField5.getText();
+        
+        
+        try {
+            FileWriter Writer = new FileWriter("COD.txt", true);
+            Writer.write("Billing Adsress : "+billingAddress+"\nState : "+state+"\nPoscod : "+poscod+"\n");
+            Writer.write(System.getProperty("line.separator"));
+            Writer.close();
+            JOptionPane.showMessageDialog(null, "Success");
+            setVisible(false);
+            new COD().setVisible(true);
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
         JOptionPane.showMessageDialog(this, "Please note that payment must be made on the day of delivery :D");
         this.dispose();
         paymentform obj = new paymentform();
