@@ -4,6 +4,7 @@
  */
 package register;
 
+import java.io.FileWriter;
 import register.paymentform;
 import javax.swing.JOptionPane;
 
@@ -173,6 +174,25 @@ public class creditDebitCard extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
+        String cardNum = jTextField1.getText();
+        String expDate = jTextField2.getText();
+        String cvv = jTextField3.getText();
+        String nameOnCard = jTextField4.getText();
+        
+        
+        try {
+            FileWriter Writer = new FileWriter("Card.txt", true);
+            Writer.write("Card Number : "+cardNum+"\nExpiry Date : "+expDate+"\nCVV : "+cvv+"\nName on Card : "+nameOnCard+"\n");
+            Writer.write(System.getProperty("line.separator"));
+            Writer.close();
+            JOptionPane.showMessageDialog(null, "Success");
+            setVisible(false);
+            new COD().setVisible(true);
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
         JOptionPane.showMessageDialog(this, "Confirm payment?");
         this.dispose();
         paymentform obj = new paymentform();
