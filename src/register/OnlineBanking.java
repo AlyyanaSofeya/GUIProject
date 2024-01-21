@@ -43,6 +43,11 @@ public class OnlineBanking extends javax.swing.JFrame {
         jLabel1.setText("Choose online banking");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maybank2u", "CIMB Clicks", "Public Bank", "RHB Now", "Ambank", "Bank Rakyat", "UOB", "Affin Bank", "Bank Islam", "HSBC Online", "Bank Muamalat", "Hong Leong Connect" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jToggleButton1.setBackground(new java.awt.Color(255, 0, 102));
         jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -102,6 +107,10 @@ public class OnlineBanking extends javax.swing.JFrame {
         paymentform obj = new paymentform();
         obj.setVisible(true);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
